@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maryam's Coding Learning Journey</title>
+    <link rel="stylesheet" type="text/css" href="projectstyle.css">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+    
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+
+        section {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        form {
+            margin: 0;
+            padding: 0;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        form input,
+        form textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+
+        form button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background-color: #45a049;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Welcome to Maryam's Area</h1>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="training.html">Training</a></li>
+                <li><a href="coding.html">Coding</a></li>
+                <li><a href="question-form.html">Question Form</a></li>
+
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <h1>Contact Me</h1>
+
+        <form action="https://docs.google.com/forms/d/e/1FAIpQLSfDFQYT8sU7eCTnLDqL-A3o855Mf6AcmkVabZBiCpDEjJaqrQ/viewform?usp=sf_link" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="entry.1234567890" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="entry.0987654321" required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="entry.5678901234" rows="4" required></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <footer>
+        601-Maryam
+    </footer>
+</body>
+
+</html>

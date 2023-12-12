@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Maryam</title>
+
+    <!-- Include your existing CSS file -->
+    <link rel="stylesheet" type="text/css" href="projectstyle.css">
+
+    <style>
+        /* Add any additional styles for the Fetch button here */
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 20px; /* Adjust spacing as needed */
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>About Me</h1>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="training.html">Training</a></li>
+                <li><a href="coding.html">Coding</a></li>
+                <li><a href="question-form.html">Question Form</a></li>
+
+            </ul>
+        </nav>
+    </header>
+
+   
+
+
+    <section>
+        <p>
+            Hi, I'm Maryam. I'm passionate about web development and love to code. I'm enthusiastic about expanding my skills and knowledge in the tech world.
+        </p>
+        <p>
+            In my free time, I enjoy engaging in public speaking. It's a way for me to share my knowledge and connect with people. I'm also a fitness enthusiast and love staying active and maintaining a healthy lifestyle.
+        </p>
+        <p>
+            I was born and raised in the beautiful city of Baghdad. Its rich history, culture, and diverse community have always been a source of inspiration for me.
+        </p>
+            <!-- Fetch button  assigm 5 -->
+        <p>If you would like to know more about my degrees, click the button to fetch information.</p><br>
+    <button id="fetchButton">Fetch Degrees</button>
+      
+    </section>
+
+    <section>
+        <h2>My Interests</h2>
+        <ul>
+            <li>Web Development</li>
+            <li>Fitness and Health</li>
+            <li>Cultural Exploration</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>My Hopes</h2>
+        <p>
+            My hope is to continue growing as a web developer and contribute to exciting projects. I also aspire to inspire and empower others through public speaking, helping them achieve their goals.
+        </p>
+    </section>
+
+    <section>
+        <h2>My Hometown - Baghdad</h2>
+        <img src="images/bag.jpeg" alt="contact" width="300" height="300">
+
+        <p>
+            Baghdad is a city of historical significance with a rich tapestry of cultures and traditions. I'm proud to call it my hometown. Here's a glimpse of this beautiful city:
+        </p>
+
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/2YTxmjck6sc" frameborder="0" allowfullscreen></iframe>
+    </section>
+    <script>
+     document.getElementById('fetchButton').addEventListener('click', fetchData);
+
+function fetchData() {
+    fetch('maryamdegrees.json')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log('Fetched data:', data); // Add this line
+            displayDegrees(data.degrees);
+        })
+        .catch(error => {
+            console.error('Error fetching data:', error);
+            alert('Error fetching data. See console for details.');
+        });
+}
+
+function displayDegrees(degrees) {
+    const degreesInfo = degrees.map(degree => {
+        return `${degree.type} in ${degree.program} from ${degree.school} (${degree.yearConferred})`;
+    }).join('\n');
+
+    alert(`Degrees:\n${degreesInfo}`);
+}
+
+    </script>
+</body>
+</html>
+
+
+

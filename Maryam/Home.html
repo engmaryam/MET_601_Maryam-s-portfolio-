@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maryam's Area</title>
+
+    <link rel="stylesheet" type="text/css" href="projectstyle.css">
+
+    <!-- using Vue.js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
+    <style>
+        /* Add any additional styles for the Fetch button here */
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 20px; /* Adjust spacing as needed */
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Maryam's Area</h1>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="training.html">Training</a></li>
+                <li><a href="coding.html">Coding</a></li>
+                <li><a href="question-form.html">Question Form</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home-app">
+        <h2>{{ welcomeMessage }}</h2>
+        <p>
+            I am a passionate software developer with a Bachelor's degree in Information Technology.
+            I enjoy working on web projects and maintaining a healthy lifestyle.
+        </p>
+        <img src="images/me.jpeg" alt="Maryam" width="250" height="180">
+        <p>
+            <a v-bind:href="linkedinLink">Visit my LinkedIn profile for more information about me.</a>
+        </p>
+
+    </section>
+
+    <footer>
+        601-Maryam
+    </footer>
+
+    <!-- JavaScript Code -->
+    <script>
+        // Vue instance for the Home page
+        var homeApp = new Vue({
+            el: '#home-app',
+            data: {
+                welcomeMessage: "Welcome to Maryam's Area!",
+                linkedinLink: "https://www.linkedin.com/in/maryam23/"
+            },
+            methods: {
+                fetchData: function() {
+                    // Add your fetch data logic here
+                    alert("Fetching data...");
+                }
+            }
+        });
+    </script>
+</body>
+</html>

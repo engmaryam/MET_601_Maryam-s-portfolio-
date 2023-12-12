@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Training and Workout Journey</title>
+    <link rel="stylesheet" type="text/css" href="projectstyle.css">
+    <!-- Link Vue.js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <style>
+        /* Additional CSS  */
+        .gym-gallery {
+            position: relative;
+        }
+
+        .gym-image {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            object-fit: cover;
+            border: 2px solid #333;
+            transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+
+        .gym-image:hover {
+            transform: scale(1.1);
+            opacity: 0.8;
+        }
+
+        .gallery-nav {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .nav-arrow {
+            font-size: 24px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Welcome to Maryam's Area</h1>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="training.html">Training</a></li>
+                <li><a href="coding.html">Coding</a></li>
+                <li><a href="question-form.html">Question Form</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <h1>Training and Workout Journey</h1>
+        <p>
+            I will share my experiences, challenges, and achievements in my workout journey.
+        </p>
+
+        <!-- Section 1: Healthy Food Nutrition Report and Website Recommendation -->
+        <section>
+            <h2>Healthy Food Nutrition</h2>
+            <p>
+                In order to maintain a fit and healthy lifestyle, it's crucial to pay attention to your nutrition. A well-balanced diet ensures that your body gets the essential nutrients it needs for optimal performance and recovery. Consider including a variety of fruits, vegetables, lean proteins, and whole grains in your meals.
+            </p>
+            <p>
+                I recommend checking out <a href="https://www.choosemyplate.gov/" target="_blank">ChooseMyPlate</a> for valuable information on building a nutritious plate. This website offers practical tips and resources to help you make healthier food choices.
+            </p>
+            <p>
+                Remember, a combination of a balanced diet and regular exercise contributes to a successful fitness journey.
+            </p>
+        </section>
+
+        <!-- Section 2: Workout Schedule and Focus Areas -->
+        <section>
+            <h2>Workout Days</h2>
+            <p>
+                Consistency is key in any fitness journey. Plan your workout days strategically to target different muscle groups and ensure overall body development. Here's a suggested workout schedule:
+            </p>
+            <ul>
+                <li>Monday: Upper Body (Chest and Arms)</li>
+                <li>Wednesday: Core and Cardio</li>
+                <li>Friday: Lower Body (Legs and Glutes)</li>
+            </ul>
+            <p>
+                Make sure to incorporate a mix of strength training, cardiovascular exercises, and flexibility workouts. Adjust the intensity based on your fitness level and gradually increase as you progress.
+            </p>
+        </section>
+
+        <!-- Section 3: Gym Photo and Fitness Focus -->
+        <section>
+            <h2>Gym Journey</h2>
+            <!-- Vue.js Photo  -->
+            <div id="gym-gallery" class="gym-gallery">
+                <div v-for="(photo, index) in gymPhotos" :key="index" v-show="currentIndex === index">
+                    <img :src="photo.src" :alt="photo.alt" class="gym-image">
+                </div>
+                <div class="gallery-nav">
+                    <span class="nav-arrow" @click="prevPhoto">&#9665;</span>
+                    <span class="nav-arrow" @click="nextPhoto">&#9655;</span>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <footer>
+        601-Maryam
+    </footer>
+
+    <script>
+        // Vue instance for the Gym Photo Gallery
+        new Vue({
+            el: '#gym-gallery',
+            data: {
+                gymPhotos: [
+                    { src: 'images/sp1.jpeg', alt: 'Maryam in the gym 1' },
+                    { src: 'images/sp2.jpg', alt: 'Maryam in the gym 2' },
+                    { src: 'images/sp3.jpg', alt: 'Maryam in the gym 3' },
+                ],
+                currentIndex: 0,
+            },
+            methods: {
+                nextPhoto() {
+                    this.currentIndex = (this.currentIndex + 1) % this.gymPhotos.length;
+                },
+                prevPhoto() {
+                    this.currentIndex = (this.currentIndex - 1 + this.gymPhotos.length) % this.gymPhotos.length;
+                },
+            },
+        });
+    </script>
+</body>
+
+</html>

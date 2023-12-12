@@ -1,0 +1,22 @@
+{
+  "degrees": [
+    {
+      "school": "University of Baghdad",
+      "program": "Information Technology Engineering",
+      "type": "BS",
+      "yearConferred": 2015
+    },
+    {
+      "school": "Austin Community College",
+      "program": "Programming",
+      "type": "AA",
+      "yearConferred": 2019
+    },
+    {
+      "school": "Boston College",
+      "program": "Masters in Software Development",
+      "type": "MS",
+      "yearConferred": 2024
+    }
+  ]
+}
